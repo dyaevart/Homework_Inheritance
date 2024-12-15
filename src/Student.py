@@ -29,9 +29,8 @@ class Student:
 
 
     def __str__(self):
-        flat_grades_list = sum(list(self.grades.values()), [])
         return ("Имя: " + self.name + "\nФамилия: " + self.surname +
-                "\nСредняя оценка за лекции: " + str(sum(flat_grades_list) / len(flat_grades_list)) +
+                "\nСредняя оценка за лекции: " + str(Student.get_all_average_grades(self)) +
                 "\nКурсы в процессе изучения: " + ", ".join(map(str, self.courses_in_progress)) +
                 "\nЗавершенные курсы: " + ", ".join(map(str, self.finished_courses)))
 

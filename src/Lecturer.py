@@ -16,9 +16,8 @@ class Lecturer(Mentor):
         return sum(flat_list) / len(flat_list)
 
     def __str__(self):
-        flat_grades_list = sum(list(self.lecturer_grades.values()), [])
         return ("Имя: " + self.name + "\n" + "Фамилия: " + self.surname + "\n" +
-                "Средняя оценка за лекции: " + str(sum(flat_grades_list) / len(flat_grades_list)))
+                "Средняя оценка за лекции: " + str(Lecturer.get_all_average_grades(self)))
 
     def __lt__(self, other):
         if not isinstance(other, self.__class__):
